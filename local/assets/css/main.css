@@ -1,0 +1,111 @@
+*,
+:after,
+:before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+aside,
+footer,
+header,
+nav,
+section {
+    display: block
+}
+
+body {
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-style: normal
+}
+
+input::-ms-clear {
+    display: none
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+sup {
+    position: relative;
+    top: -.3em;
+    font-size: .8em;
+    left: .1em
+}
+
+a,
+a:hover,
+a:visited {
+    text-decoration: none;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+ul li {
+    list-style: none
+}
+
+img,
+sup {
+    vertical-align: top
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit
+}
+
+p.title {
+    font-family: 'Literature Decor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+}
+
+p.title--big {
+    font-family: 'Literature Decor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 73px;
+}
+
+p.text {
+    font-family: 'Gilroy-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.pb100 {
+    padding-bottom: 40px;
+}
+
+.pb48 {
+    padding-bottom: 48px;
+}
+
+.mb64 {
+    margin-bottom: 64px;
+}

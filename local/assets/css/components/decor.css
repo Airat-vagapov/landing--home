@@ -1,0 +1,106 @@
+.decor--birds {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+}
+
+.decor--cityMap {
+    position: absolute;
+    left: 0;
+    top: 60px;
+}
+
+.decor__rounds {
+    position: absolute;
+    height: 1161px;
+    top: -582px;
+}
+
+.decor__round--1000 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1161px;
+    height: 1161px;
+    border-radius: 1161px;
+    border: 1px solid rgba(164, 126, 27, 0.25);
+}
+
+.decor__round--940 {
+    position: absolute;
+    left: 0;
+    top: 120px;
+    width: 943px;
+    height: 943px;
+    border-radius: 943px;
+    border: 1px solid rgba(164, 126, 27, 0.5);
+}
+
+.decor__round--400 {
+    position: absolute;
+    left: 0;
+    top: 380px;
+    width: 413px;
+    height: 413px;
+    border-radius: 413px;
+    border: 1px solid #A47E1B;
+}
+
+.decor__round--190 {
+    position: absolute;
+    left: 320px;
+    top: 490px;
+    width: 187px;
+    height: 187px;
+    border-radius: 187px;
+    border: 1px solid #A47E1B;
+    background-color: #fff
+}
+
+.decor__round__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.decor__round__text p:nth-child(1) {
+    font-family: 'Literature Decor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #A47E1B
+}
+
+.decor__round__text p:nth-child(2) {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #A47E1B;
+}
+
+.decor__round--190 img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177px;
+    height: 177px;
+    border-radius: 177px;
+}
+
+.decor__round--right {
+    left: 840px;
+}
+.decor__round--right--2 {
+    left: 1060px;
+}
+
+.decor--symbol {
+    position: absolute;
+    right: 0;
+    top: -290px;
+    /* transform: translateY(-50%); */
+}

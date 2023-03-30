@@ -1,0 +1,114 @@
+.slick > img {
+    position: relative;
+}
+
+.slider--1 {
+    position: relative;
+}
+
+.slider--1::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 485px;
+    height: 100%;
+    background-color: #313E48;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.slider .textBlock {
+    position: absolute;
+    top: 220px;
+    left: 80px;
+    margin: auto 0;
+}
+
+.slider__customArrow {
+    display: flex;
+    position: absolute;
+    bottom: 72px;
+    left: 80px;
+    z-index: 15;
+    gap: 8px;
+}
+
+.button__customArrow--prev--small {
+    width: 72px;
+    height: 72px;
+    border: 1px solid #A47E1B;
+    border-radius: 80px;
+    position: relative;
+    transition: all .2s ease-in;
+}
+
+.button__customArrow--fwd {
+    width: 152px;
+    height: 152px;
+    border: 1px solid #A47E1B;
+    border-radius: 80px;
+    position: relative;
+    transition: all .2s ease-in;
+}
+
+.button__customArrow--prev--small i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, 50%);
+}
+
+.button__customArrow--fwd i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(-90deg) translate(50%, -50%);
+}
+
+.slider__customCounter {
+    position: absolute;
+    justify-content: flex-end;
+    align-items: flex-end;
+    bottom: 72px;
+    width: 100%;
+    right: 80px;
+    gap: 12px;
+}
+
+.slider__customCounter--current {
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    font-family: 'Literature Decor';
+}
+.slider__customCounter--all {
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.button__customArrow--fwd:hover, 
+.button__customArrow--prev--small:hover {
+    background-color: #AC835D;
+    transition: all .2s ease-in;
+}
+
+.slider--2 {
+    padding-left: 32px;
+    flex-basis: 50%;
+}
+
+.content__block--slider2 {
+    align-items: stretch;
+}
+div.slider__text--active {
+    display: flex;
+}
+div.slider__text--hidden {
+    display: none;
+}
