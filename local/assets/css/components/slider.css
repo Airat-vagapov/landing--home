@@ -98,11 +98,6 @@
     transition: all .2s ease-in;
 }
 
-.slider--2 {
-    padding-left: 32px;
-    flex-basis: 50%;
-}
-
 .content__block--slider2 {
     align-items: stretch;
 }
@@ -111,4 +106,19 @@ div.slider__text--active {
 }
 div.slider__text--hidden {
     display: none;
+}
+
+.verticalSlider {
+    position: relative;
+}
+
+.verticalSlider__image {
+    padding-left: 32px;
+}
+
+.verticalSlider__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 72px 0;
 }
