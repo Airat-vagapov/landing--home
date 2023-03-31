@@ -12,12 +12,15 @@
 }
 
 .container {
-    width: calc(1440px - 160px);
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    /* width: calc(1440px - 160px); */
+    padding: 0 80px;
 }
 .container--big {
-    width: calc(1440px - 380px);
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 190px;
 }
 
 .container--right {
@@ -28,6 +31,11 @@
 
 .flex__row {
     display: flex;
+}
+
+.flex__row--center {
+    display: flex;
+    align-items: center;
 }
 
 .flex__col  {
@@ -129,6 +137,9 @@
     padding: 100px 0;
     justify-content: flex-end;
 }
+.content__block--gap {
+    gap: 16px;
+}
 
 
 
@@ -150,15 +161,26 @@
 
 .textBlock--2 {
     position: relative;
-    padding-top: 20%;
     padding-right: 32px ;
     border-right: 1px solid #4B5863;
     flex-basis: 50%;
     justify-content: space-between;
 }
 
+.textBlock--2  .title {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.textBlock--2 .text {
+    position: relative;
+}
+
 .textBlock--500 {
     max-width: 500px;
+}
+.textBlock--700 {
+    max-width: 700px;
 }
 
 
@@ -272,3 +294,91 @@
     height: 177px;
     border-radius: 177px;
 }
+
+.imageWithTittle {
+    background-image: url('/local/assets/img/intercom-on-a-gate-in-front-of-residential-building 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-basis: 50%;
+}
+.imageWithTittle .title {
+    align-self: center;
+    padding: 0 80px;
+}
+
+.iconWithText__block {
+    flex-basis: 50%;
+    padding: 80px;
+}
+.iconWithText__elem {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 48px 0;
+    border-bottom: 1px solid #4B5863;
+}
+
+.iconWithText__icon {
+    font-size: 56px;
+    color: #FFCC48;
+    margin-left: 24px;
+    align-self: center;
+}
+
+.titleAndText__list {
+    flex-basis: 33%;
+    padding: 80px;
+    padding-right: 0;
+    flex-grow: 2;
+}
+.titleAndText__elem {
+    display: flex;
+    justify-content: flex-start;
+    padding: 32px 24px;
+    border-bottom: 1px solid #4B5863;
+}
+
+.list li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.list li>div {
+    background-color: #fff;
+    margin-right: 8px;
+    height: 4px;
+    width: 4px;
+    border-radius: 8px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    /* width: 50%; */
+}
+
+.footer--left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer--left>.iconWithText__block {
+    padding-left: 0;
+}
+
+.footer__worksTime {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer--left {
+    max-width: 500px;
+}
+
+.footer__map {
+    width: 100%;
+}
+

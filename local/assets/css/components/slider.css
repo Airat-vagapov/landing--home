@@ -112,6 +112,11 @@ div.slider__text--hidden {
     position: relative;
 }
 
+.verticalSlider--center {
+    display: flex;
+    align-items: center
+}
+
 .verticalSlider__image {
     padding-left: 32px;
 }
@@ -121,4 +126,13 @@ div.slider__text--hidden {
     top: 0;
     left: 0;
     padding: 72px 0;
+    display: flex;
+    align-items: center
+}
+
+.verticalSlider--trigger {
+    height: 100vh;
+}
+.verticalSlider--trigger--2 {
+    height: 100vh;
 }

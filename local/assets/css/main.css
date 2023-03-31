@@ -61,7 +61,8 @@ ul li {
 
 img,
 sup {
-    vertical-align: top
+    vertical-align: top;
+    max-width: 100%;
 }
 
 h1,
@@ -96,6 +97,22 @@ p.text {
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
+}
+
+.p .text--big {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px; 
+}
+
+p.text--small {
+    font-family: 'Gilroy-Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .pb100 {
