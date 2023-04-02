@@ -33,8 +33,8 @@ $(document).ready(function () {
     })
 
     // Заказать звонок
+    // // Открытие
     $('[data-modal="callback"]').on('click', function () {
-
         $('.modal__background').animate({ left: '-100%', opacity: 1 }, 600);
         $('.modal__body').animate({ left: '50%', opacity: 1 }, 600);
         $('.modal__callback').addClass('active')
@@ -42,6 +42,7 @@ $(document).ready(function () {
         $("body").css("overflow", "hidden");
     })
 
+    // // Открытие
     $('[data-modal="callback-close"]').on('click', function () {
         $('.modal__background').animate({ left: '0', opacity: 0 }, 600);
         $('.modal__body').animate({ left: '200%', opacity: 0 }, 600);
@@ -50,10 +51,13 @@ $(document).ready(function () {
     })
 
     $('.modal__background').on('click', function () {
-        $('.modal__background').animate({ left: '0', opacity: 0 }, 600);
-        $('.modal__body').animate({ left: '200%', opacity: 0 }, 600);
-        $('.modal__callback').removeClass('active')
-        $("body").css("overflow", "auto");
+        setTimeout(function () {
+            $('.modal__callback').removeClass('active')
+            $('.modal__background').animate({ left: '0', opacity: 0 }, 600);
+            $('.modal__body').animate({ left: '200%', opacity: 0 }, 600);
+            $("body").css("overflow", "auto");
+        }, 300)
+        
     })
 
 })

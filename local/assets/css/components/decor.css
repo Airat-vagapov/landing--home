@@ -5,7 +5,7 @@
 }
 
 .decor--cityMap {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 60px;
 }

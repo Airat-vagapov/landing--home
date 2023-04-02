@@ -1,36 +1,94 @@
 $(document).ready(function () {
     // Слайдер на блок 8
 
-    $('.slider').each(function () {
-        var slider = $(this);
-        $(this).slick({
-            arrows: false,
-            dots: false,
-            prevArrow: $('.button__customArrow--prev--small'),
-            fwdArrow: $('.button__customArrow--fwd')
-        });
-        var parent = $(this).closest('.slider__container')
+    // $('.slider').each(function () {
+    //     var slider = $(this);
+    //     $(this).slick({
+    //         arrows: false,
+    //         dots: false,
+    //         prevArrow: $('.button__customArrow--prev--small'),
+    //         fwdArrow: $('.button__customArrow--fwd')
+    //     });
+    //     var parent = $(this).closest('.slider__container')
 
 
-        parent.find('.button__customArrow--prev--small').click(function () {
-            slider.slick('slickPrev');
-        });
+    //     parent.find('.button__customArrow--prev--small').click(function () {
+    //         slider.slick('slickPrev');
+    //     });
 
-        parent.find('.button__customArrow--fwd').click(function () {
-            slider.slick('slickNext');
-        });
+    //     parent.find('.button__customArrow--fwd').click(function () {
+    //         slider.slick('slickNext');
+    //     });
 
-        slider.on('init', function (event, slick, currentSlide) {
-            var counter = parent.find('.slider__customCounter');
-            counter.find('.slider__customCounter--current').text('0' + (currentSlide + 1));
-            counter.find('.slider__customCounter--all').text('/' + '0' + slick.slideCount);
-        });
-        slider.on('afterChange', function (event, slick, currentSlide) {
-            var counter = parent.find('.slider__customCounter');
-            counter.find('.slider__customCounter--current').text('0' + (currentSlide + 1));
-            counter.find('.slider__customCounter--all').text('/' + '0' + slick.slideCount);
-        });
-    })
+    //     slider.on('init', function (event, slick, currentSlide) {
+    //         var counter = parent.find('.slider__customCounter');
+    //         counter.find('.slider__customCounter--current').text('0' + (currentSlide + 1));
+    //         counter.find('.slider__customCounter--all').text('/' + '0' + slick.slideCount);
+    //     });
+    //     slider.on('afterChange', function (event, slick, currentSlide) {
+    //         var counter = parent.find('.slider__customCounter');
+    //         counter.find('.slider__customCounter--current').text('0' + (currentSlide + 1));
+    //         counter.find('.slider__customCounter--all').text('/' + '0' + slick.slideCount);
+    //     });
+    // })
+
+    var interleaveOffset = 0.5;
+
+    var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        navigation: {
+            nextEl: ".button__customArrow--fwd",
+            prevEl: ".button__customArrow--prev--small"
+        },
+        on: {
+            progress: function () {
+                var swiper = this;
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    var slideProgress = swiper.slides[i].progress;
+                    var innerOffset = swiper.width * interleaveOffset;
+                    var innerTranslate = slideProgress * innerOffset;
+                    swiper.slides[i].querySelector(".slide-inner").style.transform =
+                        "translate3d(" + innerTranslate + "px, 0, 0)";
+                }
+            },
+            touchStart: function () {
+                var swiper = this;
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    swiper.slides[i].style.transition = "";
+                }
+            },
+            setTransition: function (speed) {
+                var swiper = this;
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    swiper.slides[i].style.transition = speed + "ms";
+                    swiper.slides[i].querySelector(".slide-inner").style.transition =
+                        speed + "ms";
+                }
+            }
+        }
+    };
+
+    var swiper = new Swiper(".swiper-container", swiperOptions);
+
+    // document.querySelector('[data-toggle]').addEventListener('click', function(){
+    //   if (swiper.realIndex == 0) {
+    //     swiper.slideTo(swiper.slides.length - 1);
+    //   } else {
+    //     swiper.slideTo(0);
+    //   }
+    // });
+
+    // function logIndex () {
+    //   requestAnimationFrame(logIndex);
+    //   console.log(swiper.realIndex);
+    // }
+    // logIndex();
+
 
 
 
