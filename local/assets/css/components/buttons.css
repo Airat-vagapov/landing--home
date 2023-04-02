@@ -11,10 +11,12 @@
     line-height: 24px;
     text-align: center;
     width: 100%;
+    transition: all 0.2 ease-in;
 }
 
 .button:hover{
-    background-color:#A47E1B;
+    background-color:#E1AE2A;
+    transition: all 0.2 ease-in;
 }
 
 .button--fill {
@@ -24,7 +26,12 @@
 
 .button--outline {
     border: 1px solid #A47E1B;
-    color: #fff
+    color: #fff;
+    cursor: pointer;
+}
+
+.button--outline:hover{
+    background-color: #E1AE2A;
 }
 
 .button--link {
@@ -44,6 +51,8 @@
     top: calc(100% - 35px);
     right: calc(100% - 240px);
     z-index: 5;
+    cursor: pointer;
+    transition: all 0.2 ease-in;
 }
 
 .button--scrollDown i {
@@ -51,4 +60,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.button--scrollDown:hover {
+    background-color: #E1AE2A;
+    transition: all 0.2 ease-in;
 }

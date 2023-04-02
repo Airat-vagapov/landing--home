@@ -12,15 +12,21 @@
 }
 
 .container {
+    /* width: 100%; */
+    /* max-width: 1440px;
+    width: calc(1440px - 160px);
+    margin: 0 auto; */
     width: 100%;
     max-width: 1440px;
-    /* width: calc(1440px - 160px); */
-    padding: 0 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin: 0 auto;
 }
 .container--big {
     width: 100%;
     max-width: 1440px;
     padding: 0 190px;
+    margin: 0 auto;
 }
 
 .container--right {
@@ -140,6 +146,7 @@
 .content__block--gap {
     gap: 16px;
 }
+
 
 
 

@@ -82,6 +82,13 @@ p.title {
     font-size: 48px;
     line-height: 55px;
 }
+p.title--small {
+    font-family: 'Literature Decor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+}
 
 p.title--big {
     font-family: 'Literature Decor';
@@ -113,6 +120,16 @@ p.text--small {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+}
+
+.text__link--grey {
+    color: #BBBBBB;
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.text__link--grey:hover {
+    color: #FFCC48;
+    border-color: #FFCC48;
 }
 
 .pb100 {

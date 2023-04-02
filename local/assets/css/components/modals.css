@@ -1,5 +1,295 @@
+/* Menu */
+
 .modal__menu {
-    background-color: #4D4F5E;
-    height: 100vh;
-    width: auto;
+    background-color: #4d4f5e;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    overflow: auto;
+    z-index: 25;
 }
+
+.modal__menu__header {
+    background: none;
+}
+
+.modal__menu__inner {
+    padding: 48px 32px;
+    overflow-y: auto;
+}
+
+.modal__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.modal__list__elem {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    transition: all 0.3 ease-in;
+    cursor: pointer;
+}
+
+.modal__list__num {
+    padding-top: 4px;
+    font-family: "Literature Decor";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.modal__list__elem:hover {
+    color: #ffcc48;
+    transition: all 0.3 ease-in;
+}
+
+.triangle {
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.triangle.left {
+    clip-path: polygon(0 0, 0 100%, 0 100%);
+}
+
+.triangle.right {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%);
+}
+
+.modal__menu.open {
+    display: flex;
+}
+
+.open.triangle.left {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.open.triangle.right {
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* Callback */
+
+.modal__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 32, 37, 0.7);
+    z-index: 15;
+    display: block;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.modal__callback {
+    /* position: relative; */
+}
+
+.modal__body {
+    display: flex;
+    /* align-items: center; */
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background: #313e48;
+    padding: 80px;
+    width: 70%;
+    display: flex;
+    opacity: 0;
+}
+
+.modal__body__left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding-right: 60px;
+    border-right: 1px solid #55585a;
+}
+
+.modal__body__left .title {
+    margin-bottom: 24px;
+}
+
+.modal__body__right {
+    display: flex;
+    flex-basis: 50%;
+    padding-left: 60px;
+    padding-top: 7px;
+}
+
+.callback__form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.form__input__block {
+    position: relative;
+    /* opacity: 0; */
+}
+
+.form__input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #798187;
+    padding-bottom: 12px;
+    background-color: #313e48;
+    width: 100%;
+    transition: all 0.2s ease-in;
+}
+
+.form__input:focus {
+    border-color: #ffcc48;
+    outline: 0;
+    caret-color: #fff;
+    transition: all 0.2s ease-in;
+}
+
+.form__input:focus ~ label {
+    transition: all 0.2s ease-in;
+    /* display: none; */
+    opacity: 0;
+}
+
+.form__input ~ label {
+    position: absolute;
+    left: 8px;
+    top: -12px;
+    font-family: "Gilroy-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    transition: all 0.2s ease-in;
+    opacity: 1;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.form__disclaimer p {
+    font-family: "Gilroy-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #bbbbbb;
+    /* opacity: 0; */
+}
+
+.callback__form button {
+    margin: 0 auto 0 0;
+}
+
+.modal__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.2 ease-in;
+    color: #6d7b85;
+}
+
+.modal__close:hover {
+    color: #ffcc48;
+    transition: all 0.2 ease-in;
+}
+
+/* Callback animation */
+.modal__callback.active {
+    overflow: hidden;
+    transition: transform 400ms cubic-bezier(0.4, 0.1, 0.7, 0.95);
+}
+
+[data-callback-anim="0"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 620ms;
+    opacity: 0;   
+}
+
+[data-callback-anim="1"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 740ms;
+    opacity: 0;
+}
+[data-callback-anim="2"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 860ms;
+    opacity: 0;
+}
+[data-callback-anim="3"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 980ms;
+    opacity: 0;
+}
+[data-callback-anim="4"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 1100ms;
+    opacity: 0;
+}
+[data-callback-anim="5"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 1220ms;
+    opacity: 0;
+}
+
+.modal__callback.active [data-callback-anim="0"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 620ms;
+    opacity: 1;
+}
+.modal__callback.active [data-callback-anim="1"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 740ms;
+    opacity: 1;
+}
+.modal__callback.active [data-callback-anim="2"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 860ms;
+    opacity: 1;
+}
+.modal__callback.active [data-callback-anim="3"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 980ms;
+    opacity: 1;
+}
+.modal__callback.active [data-callback-anim="4"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 1100ms;
+    opacity: 1;
+}
+.modal__callback.active [data-callback-anim="5"] {
+    transition: 300ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition-property: opacity, transform;
+    transition-delay: 1220ms;
+    opacity: 1;
+}
+
